@@ -211,6 +211,9 @@
     "extraResources": [
       "./assets/**"
     ],
+    "extraMetadata": {
+      "main": "dist/main/main.js"
+    },
     "publish": {
       "provider": "github",
       "owner": "electron-react-boilerplate",
