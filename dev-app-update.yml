@@ -1,0 +1,8 @@
+# provider: generic
+# url: 'http://localhost/release'
+item:
+  script:
+  version: 0.0.6
+  url: https://zoamainbucket.s3.eu-west-1.amazonaws.com/Data/Launcher/ZoaLauncher.zip
+  changelog:
+  mandatory: true
