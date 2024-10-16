@@ -32,15 +32,15 @@ const electronHandler = {
 
 contextBridge.exposeInMainWorld('electron', {
   ipcRenderer: {
-    sendMessage(channel, ...args) {
+    sendMessage(channel: string, ...args: any[]) {
       ipcRenderer.send(channel, ...args);
     },
-    on(channel, func) {
-      const subscription = (_event, ...args) => func(...args);
+    on(channel: string, func: (arg0: any) => any) {
+      const subscription = (_event: any, ...args: any[]) => func(...args);
       ipcRenderer.on(channel, subscription);
       return () => ipcRenderer.removeListener(channel, subscription);
     },
-    once(channel, func) {
+    once(channel: string, func: (arg0: any) => void) {
       ipcRenderer.once(channel, (_event, ...args) => func(...args));
     },
   },

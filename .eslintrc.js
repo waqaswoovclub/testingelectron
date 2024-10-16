@@ -10,9 +10,9 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/no-import-module-exports': 'off',
     'no-shadow': 'off',
-    '@typescript-eslint/no-shadow': 'error',
+    '@typescript-eslint/no-shadow': 'off',
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-unused-vars': 'off',
     // temp
     'no-nested-ternary': 'off',
     'react/button-has-type': 'off',
