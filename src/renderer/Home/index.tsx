@@ -20,6 +20,7 @@ function Home() {
   );
 
   const selectDirectory = async () => {
+    // @ts-ignore
     const selectedPath = await window.electron.selectDirectory();
     if (selectedPath) {
       setDirectoryPath(selectedPath);

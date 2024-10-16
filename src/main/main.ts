@@ -118,8 +118,8 @@ const createWindow = async () => {
     }
   });
   mainWindow.setResizable(false);
-  app.commandLine.appendSwitch('high-dpi-support', "1");
-  app.commandLine.appendSwitch('force-device-scale-factor', "1");
+  app.commandLine.appendSwitch('high-dpi-support', '1');
+  app.commandLine.appendSwitch('force-device-scale-factor', '1');
 
   mainWindow.loadURL(resolveHtmlPath('index.html'));
   // if (isDevEnv) {
@@ -177,7 +177,7 @@ app
       // On macOS it's common to re-create a window in the app when the
       // dock icon is clicked and there are no other windows open.
       if (mainWindow === null) createWindow();
-      const dialogOpts:any = {
+      const dialogOpts: any = {
         type: 'info',
         buttons: ['Ok'],
         title: `Update Not available for ${autoUpdater.channel}`,
