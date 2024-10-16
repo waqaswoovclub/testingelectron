@@ -209,11 +209,11 @@ app
   })
   .catch(console.log);
 
-const showMessage = (message: string) => {
-  console.log('showMessage trapped');
-  console.log(message);
-  window.webContents.send('updateMessage', message);
-};
+// const showMessage = (message: string) => {
+//   console.log('showMessage trapped');
+//   console.log(message);
+//   window.webContents.send('updateMessage', message);
+// };
 
 ipcMain.handle('select-directory', async () => {
   const result = await dialog.showOpenDialog({
