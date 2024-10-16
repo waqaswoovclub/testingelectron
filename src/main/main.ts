@@ -10,8 +10,8 @@
  */
 import path from 'path';
 import { app, BrowserWindow, shell, ipcMain, dialog } from 'electron';
-import { autoUpdater, AppUpdater } from 'electron-updater';
-import log from 'electron-log';
+import { autoUpdater } from 'electron-updater';
+// import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
 
@@ -31,10 +31,10 @@ import { resolveHtmlPath } from './util';
 // }
 
 let mainWindow: BrowserWindow | null = null;
-let updateInterval = null;
-let updateCheck = false;
-let updateFound = false;
-let updateNotAvailable = false;
+// const updateInterval = null;
+// const updateCheck = false;
+// const updateFound = false;
+// const updateNotAvailable = false;
 
 autoUpdater.autoDownload = false;
 autoUpdater.autoInstallOnAppQuit = true;
@@ -172,7 +172,7 @@ app
   .then(() => {
     createWindow();
     // updateInterval = setInterval(() => autoUpdater.checkForUpdates(), 600000);
-    
+
     app.on('activate', () => {
       // On macOS it's common to re-create a window in the app when the
       // dock icon is clicked and there are no other windows open.
@@ -209,12 +209,11 @@ app
   })
   .catch(console.log);
 
-
- const showMessage = (message:string)=> {
-    console.log("showMessage trapped");
-    console.log(message);
-    window.webContents.send("updateMessage", message);
-  }
+const showMessage = (message: string) => {
+  console.log('showMessage trapped');
+  console.log(message);
+  window.webContents.send('updateMessage', message);
+};
 
 ipcMain.handle('select-directory', async () => {
   const result = await dialog.showOpenDialog({
@@ -222,9 +221,8 @@ ipcMain.handle('select-directory', async () => {
   });
   if (result.canceled) {
     return null;
-  } else {
-    return result.filePaths[0];
   }
+  return result.filePaths[0];
 });
 
 //   autoUpdater.on("update-available", (event, releaseNotes, releaseName) => {

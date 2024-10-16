@@ -1,11 +1,5 @@
+function Login() {
+  return <div>Second page</div>;
+}
 
-const Login=()=> {
-    return (
-    <div>
-        Second page
-    </div>
-    );
-  }
-
-export default Login
-  
+export default Login;

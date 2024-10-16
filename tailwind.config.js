@@ -6,19 +6,16 @@ module.exports = {
 
   theme: {
     extend: {
-      colors:{
-        lightWhite:'#F1F1F1',
-        lightGreen:'#00C976',
-        skyBlue:'#085DFF',
-        greenBlue:'#6BD2D7'
-
-},
-fontFamily: {
-  montserrat: ['Montserrat', 'sans-serif'],
-},
+      colors: {
+        lightWhite: '#F1F1F1',
+        lightGreen: '#00C976',
+        skyBlue: '#085DFF',
+        greenBlue: '#6BD2D7',
+      },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+      },
     },
   },
   // plugins: [require('tailwindcss'), require('autoprefixer')],
-
-}
-
+};

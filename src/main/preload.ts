@@ -48,6 +48,6 @@ contextBridge.exposeInMainWorld('electron', {
   closeWindow: () => ipcRenderer.send('close-window'),
   selectDirectory: async () => {
     return await ipcRenderer.invoke('select-directory');
-  }
+  },
 });
 export type ElectronHandler = typeof electronHandler;
